@@ -24,7 +24,7 @@ def respond():
         if commands[i] == '001':
             reply += ack()
         elif commands[i] == '010':
-            if (has_fuel_issue):
+            if (has_fuel_issue()):
                 f+=1
                 reply += flt(gen_fault_code(commands[i+1])) # include randomness
             else:
@@ -58,8 +58,8 @@ def lvl(report):
 
 # generating random behavior
 
-def has_fuel_issue(component_number):
-    random.seed(component_number + str(int(time.time()/10))) # simulated randomness, associated with time. 10 seconds between changes
+def has_fuel_issue():
+    random.seed(int(time.time())) # simulated randomness, associated with time. 10 seconds between changes
     return random.choice([0, 1])
 
 def gen_fault_code(component_number):
