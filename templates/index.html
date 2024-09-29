@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>File Upload</h2>
+<form action="/request_file" method="post" enctype="multipart/form-data">
+  <input type="file" name="fileToUpload" id="fileToUpload">
+  <input type="submit" value="Upload File" name="submit">
+</form>
+
+<h2>Text Submit</h2>
+<form action="/request_session" method="post">
+  <label for="textInput">Text:</label><br>
+  <input type="text" id="textInput" name="textInput"><br>
+  <input type="submit" value="Submit Text">
+</form>
+
+</body>
+</html>
